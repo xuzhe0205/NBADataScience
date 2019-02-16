@@ -1,6 +1,6 @@
-A web crawler scraping NBA data
+# A web crawler scraping NBA data
+------------------------------------
 
-=======
 ## Description: This portion in the project serves as a crawler that help scraping and retrieving helpful data from the nba.com website to assist data analysis in the Jupyter notebook
 
 * Files: nbacrawler.py
