@@ -9,37 +9,22 @@ from selenium import webdriver
 import collections
 import time
 import csv
+import urllib
 
 class NBACrawler(object):
-    def __init__(self):
+    def __init__(self, myURL):
         self.driver = webdriver.Chrome(executable_path='/Users/Oliver/Miscellaneous/chromedriver')
-        self.driver.get('http://stats.nba.com/teams/traditional/#!?sort=W_PCT&dir=-1')
+        self.driver.get(myURL)
         time.sleep(2)
-    def scrapeTeamStats(self):
-
-        csv_file = open('nbateamstats.csv', 'wb')
+    def scrapeTeamStats(self, fileName):
+        fpath = '/Users/Oliver/Desktop/NEU/IS6105/001443089_5_Zhe_Xu/data/'
+        csv_file = open(fpath + fileName, 'wb')
         writer = csv.writer(csv_file)
         writer.writerow(['TEAM', 'GP', 'W', 'L', 'WIN%', 'MIN', 'PTS', 'FGM', 'FGA', 'FG%', '3PM', '3PA', '3P%', 'FTM', 'FTA', 'FT%', \
                         'OREB', 'DREB', 'REB', 'AST', 'TOV', 'STL', 'BLK', 'BLKA', 'PF', 'PFD', '+/-'])
 
-        # url='https://stats.nba.com/teams/traditional/?sort=W_PCT&dir=-1'
-
-        # driver.get(url)
-        # html = driver.page_source
-        # soup = BeautifulSoup(html, "lxml")
-        # table = soup.find_all('table', {'id':'team-stats-per_game'})
-        # page = requests.get(url)
-
-        # doc = lh.fromstring(page.content)
-
-        # soup = BeautifulSoup(page.text, 'lxml')
-
-        # headrow = soup.findAll('thead', class_='table_outer_container')
-
-        # table_tags = soup.select("table")
-
-        # teamPGtable = soup.find('table', id="team-stats-per_game")
         teamStats = self.driver.find_elements_by_xpath('/html/body/main/div[2]/div/div[2]/div/div/nba-stat-table/div[2]/div[1]/table/tbody/tr')
+       
         cnt = 0
         for stats in teamStats:
             teams_dict = collections.OrderedDict()
@@ -102,6 +87,43 @@ class NBACrawler(object):
             cnt += 1
         csv_file.close()
 
+    def scrapeTeamAdvStats(self, fileName):
+        fpath = '/Users/Oliver/Desktop/NEU/IS6105/001443089_5_Zhe_Xu/data/'
+        csv_file = open(fpath + fileName, 'wb')
+        writer = csv.writer(csv_file)
+        writer.writerow(['TEAM', 'GP', 'W', 'L', 'MIN', 'OFFRTG', 'DEFRTG', 'NETRTG', 'AST%', 'AST/TO', 'AST RATIO', 'OREB%', 'DREB%', 
+                        'REB%', 'TOV%', 'EFG%', 'TS%', 'PACE', 'PIE'])
+        soup = BeautifulSoup(self.driver.page_source,"lxml")
+        teamAdvDiv = soup.find('div', {'class': 'nba-stat-table__overflow'})
+        teamAdvTrs = ((teamAdvDiv.find('table')).find('tbody')).find_all('tr')
+        c = 0
+        for tr in teamAdvTrs:
+            tds = tr.find_all('td')
+            teams_dict = collections.OrderedDict()
+            teams_dict['Team'] = tds[1].text
+            teams_dict['GP'] = tds[2].text
+            teams_dict['W'] = tds[3].text
+            teams_dict['L'] = tds[4].text
+            teams_dict['Min'] = tds[5].text
+            teams_dict['OFFRTG'] = tds[6].text
+            teams_dict['DEFRTG'] = tds[7].text
+            teams_dict['NETRTG'] = tds[8].text
+            teams_dict['AST%'] = tds[9].text
+            teams_dict['AST/TO'] = tds[10].text
+            teams_dict['AST RATIO'] = tds[11].text
+            teams_dict['OREB%'] = tds[12].text
+            teams_dict['DREB%'] = tds[13].text
+            teams_dict['REB%'] = tds[14].text
+            teams_dict['TOV%'] = tds[15].text
+            teams_dict['EFG%'] = tds[16].text
+            teams_dict['TS%'] = tds[17].text
+            teams_dict['PACE'] = tds[18].text
+            teams_dict['PIE'] = tds[19].text
+            writer.writerow(teams_dict.values())
+        csv_file.close()
+        
 
-nbaCrawler = NBACrawler()
-nbaCrawler.scrapeTeamStats()
+
+
+nbaCrawler = NBACrawler("https://stats.nba.com/teams/advanced/?sort=W&dir=-1&Season=2017-18&SeasonType=Playoffs")
+nbaCrawler.scrapeTeamAdvStats('nbateamadvancedplayoff2018.csv')
