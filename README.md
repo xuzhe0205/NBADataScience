@@ -1,7 +1,9 @@
 # A web crawler scraping NBA data & Bayesian Model for NBA game analysis
 ------------------------------------
 
-### Description: This portion in the project serves as a crawler that help scraping and retrieving helpful data from the nba.com website to assist Bayesian modeling and data analysis in the Jupyter notebook
+### Description: 
+
+This portion in the project serves as a crawler that help scraping and retrieving helpful data from the nba.com website to assist Bayesian modeling and data analysis in the Jupyter notebook
 
 * Files: 
         ./webcrawler
@@ -43,6 +45,7 @@
     Multiples data are scraped and located in the `data` folder, in which, only `HoustonRocket`, `teamstats2019` and `teamadvancedstats2019` are used
 
 ### Acknowledgement
+
     https://nycdatascience.com/blog/student-works/web-scraping/web-scraping-nba-stats/
     Stackoverflow
     python.org
