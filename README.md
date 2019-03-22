@@ -3,13 +3,16 @@
 
 ### Description: 
 
-This portion in the project serves as a crawler that help scraping and retrieving helpful data from the nba.com website to assist Bayesian modeling and data analysis in the Jupyter notebook
+A data science project that using linear regression and Bayesian Model to analyze NBA game performance and drive predictions.  This project involves: firstly writing a web crawler in Python to scrape various data from NBA.com; secondly manipulating data to: perform linear regression analyzing the correlation and clustering among all related data; and building Bayesian Model with Markov chain Monte Carlo Sampling to drive team-win prediction for NBA teams in general, and one randomly chosen NBA team: Houston Rockets as well.
+
 
 * Files: 
         ./webcrawler
             nbacrawler.py
             ./data
                 nbastats.csv  
+        ./assests
+             images(.png)
         Hoston_Rockets_Analysis.ipynb
         NBATeamsAnalysis.ipynb   
         
@@ -40,9 +43,14 @@ This portion in the project serves as a crawler that help scraping and retrievin
         * Go to the first code in the Notebook, and press "Shift + Enter" to check the result or output for each line of code
 
 
+### Notes:
+
+    Multiples data are scraped and located in the `data` folder, in which, only `HoustonRocket`, `teamstats2019` and `teamadvancedstats2019` are used
+    
+
 ### Analysis
 
-#### For NBA Teams (up to 02/21/2019)
+#### For All NBA Teams (up to 02/21/2019)
 
 Start this portion of the project by doing data mining and inspection on the `teamstats2019.csv` and `teamadvancedstats2019.csv`. Following the current trend of NBA gameplay that analysts and NBA fans expect, 
 there is a boxplot that can deliever a clear yet funny interpretation of todays NBA offense, especially 
@@ -105,15 +113,30 @@ With the same logic: if teams play much worse defense in the game (value of defe
 
 ![win3](https://raw.githubusercontent.com/xuzhe0205/NBADataScience/master/assets/win3.png)
 
+<br>
+
+#### For a Randomly Selected NBA Team: Houston Rockets
+
+* In this portion of the project. I used the similar approach and procedures to build the Bayesian Model that drive winning prediction for the Houston Rockets to see why they are shooting good amount of three pointers, and yet still not among the top NBA teams (up to now 02/21/2019).
+
+* Another purpose of conducting this portion of the project is to confirm with the previous portion. And see if there is any anormalies and if the conclusions matched
+
+### Conclusion
+
+* To result in better team winning rate, attributes/execution of EFG%, DREB, DEFRTG, OFFRTG, +/- and FG% are the key for gameplay execution during the NBA game.
+
+* More specifically, maintaining better and more efficient shot selection(higher EFG%), better defense (more defensive rebound DREB, less oppenents' point allowed DEFRTG), and/or better offense (Offense rating OFFRTG, points deficit +/- and better shot selection and efficiency FG%) can help the team win more game and increase the WIN%
 
 
-### Notes:
+### Future Improvement
 
-    Multiples data are scraped and located in the `data` folder, in which, only `HoustonRocket`, `teamstats2019` and `teamadvancedstats2019` are used
+1. After acquiring/scraping more data for NBA players for each NBA team specifically, I can also use Bayesian Model Analysis to determine which players can increase the team's chance of winning, or maybe acquiring which player from another team.
+
+2. With respect to acquiring other players, what I would do is to build a bayesian model (linear) where the top (e.g. 5) players figure as parameters. Then I would first see which player has the highest associated coefficient. That is the most valuable player for the team. Then I would see how these players fare against other teams. Are there teams they play consistently well against, or consistently poor against (with personal statistics). Then I would also build a team model: Who do the specific NBA team play poor against? Now I have a model to make some decisions on. For example, how about drafting a player that plays well against teams that a specific NBA team play poor against? What if that player does not figure amongst the top players of the team he belongs to? Then that team might be ok with trading him to that NBA team.
+
+<br>
 
 ### Acknowledgement
-
-    https://nycdatascience.com/blog/student-works/web-scraping/web-scraping-nba-stats/
     Stackoverflow
     python.org
     
