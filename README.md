@@ -64,7 +64,7 @@ both traditional and advanced NBA team data. And then slice them into smaller po
 from which we can tell and select the meaningful and influencial attribute for later data science modeling:
 (`EFG%`, `DREB`, `DEFRTG`, `OFFRTG`, `+/-` and `FG%`)
 
-![hp1](https://raw.githubusercontent.com/xuzhe0205/NBADataScience/dev/assets/hp1.png)
+![hp1](https://raw.githubusercontent.com/xuzhe0205/NBADataScience/master/assets/hp1.png)
 
 
 ![hp2](https://raw.githubusercontent.com/xuzhe0205/NBADataScience/master/assets/hp2.png)
