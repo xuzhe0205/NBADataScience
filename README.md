@@ -135,6 +135,8 @@ With the same logic: if teams play much worse defense in the game (value of defe
 
 2. With respect to acquiring other players, what I would do is to build a bayesian model (linear) where the top (e.g. 5) players figure as parameters. Then I would first see which player has the highest associated coefficient. That is the most valuable player for the team. Then I would see how these players fare against other teams. Are there teams they play consistently well against, or consistently poor against (with personal statistics). Then I would also build a team model: Who do the specific NBA team play poor against? Now I have a model to make some decisions on. For example, how about drafting a player that plays well against teams that a specific NBA team play poor against? What if that player does not figure amongst the top players of the team he belongs to? Then that team might be ok with trading him to that NBA team.
 
+3. Do more research on methods of outlier data mining of using statistical dispersion. And then achieve a narrower dispersion among the current sets or aquired data in the future, and reduce the SSE.
+
 <br>
 
 ### Acknowledgement
