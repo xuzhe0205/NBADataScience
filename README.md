@@ -92,7 +92,7 @@ Sampling from the posterior predictive distribution is straighforward in PyMC3. 
 
 * By estimating these distribution plots, about 12 out of 15 posterior distributions are showing that the posterior estimates and the team_model genearally fit the prediction that this Bayesian model drives，and so they are in a good fit!
 
-![post2](https://raw.githubusercontent.com/xuzhe0205/NBADataScience/master/assets/post2.png)
+![post3](https://raw.githubusercontent.com/xuzhe0205/NBADataScience/master/assets/post3.png)
 
 
 With this Bayesian model ready, further winning prediction for the NBA teams can proceed. 
