@@ -7,6 +7,7 @@ A data science project that using linear regression and Bayesian Model to analyz
 
 
 * Files: 
+```
         ./webcrawler
             nbacrawler.py
             ./data
@@ -15,7 +16,7 @@ A data science project that using linear regression and Bayesian Model to analyz
              images(.png)
         Hoston_Rockets_Analysis.ipynb
         NBATeamsAnalysis.ipynb   
-        
+```        
 
 ### Instructions:
 
