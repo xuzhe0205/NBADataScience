@@ -57,7 +57,7 @@ Start this portion of the project by doing data mining and inspection on the `te
 there is a boxplot that can deliever a clear yet funny interpretation of todays NBA offense, especially 
 relationship between three points attempts `3PA` and winning percentage `WIN%`:
 
-![3paBoxplot](https://raw.githubusercontent.com/xuzhe0205/NBADataScience/master/assets/3pabox.png)
+![3paBoxplot](https://raw.githubusercontent.com/xuzhe0205/NBADataScience/dev/assets/3pabox.png)
 
 Moving on, I used `heatmap` from `seaborn` package to visualize the correlation among all attributes from 
 both traditional and advanced NBA team data. And then slice them into smaller portions of heatmap accordingly, 
