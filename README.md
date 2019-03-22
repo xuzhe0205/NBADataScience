@@ -3,7 +3,7 @@
 
 ### Description: 
 
-A data science project that using linear regression and Bayesian Model to analyze NBA game performance and drive predictions.  This project involves: firstly writing a web crawler in Python to scrape various data from NBA.com; secondly manipulating data to: perform linear regression analyzing the correlation and clustering among all related data; and building Bayesian Model with Markov chain Monte Carlo Sampling to drive team-win prediction for NBA teams in general, and one randomly chosen NBA team: Houston Rockets as well.
+A data science project that using linear regression and Bayesian Model to analyze NBA game performance and drive predictions.  This project involves: firstly writing a web crawler in Python using two different type of scraping approaches to scrape various data from NBA.com; secondly manipulating data to: perform linear regression analyzing the correlation and clustering among all related data; and building Bayesian Model with Markov chain Monte Carlo Sampling to drive team-win prediction for NBA teams in general, and one randomly chosen NBA team: Houston Rockets as well.
 
 
 * Files: 
